@@ -167,6 +167,31 @@ runbook, so this question can no longer be answered as written; F1's new shape i
 
 ## Open, not blocking
 
+### Q39 (F44), 2026-11-01: F44's two-way choices, recorded here because the decision log is at its cap
+
+**Blocks nothing; for your read.** (a) The person page's tool path is a fifth `memory_write` target, `person` (a name
+and a relationship), not a new tool: it saves the relationship as one daily line through the same write as any fact
+(idempotent by the call id, armed for the render), then calls `upsertEntity` with that line cited under Facts and The
+relationship (`<relationship> — memory/<date>.md#L<n>`, a bare citation as B-P6-11 has it, since a citation in
+parentheses would not resolve), the summary the relationship, the rank kept or 1. No table or column changes: it is a
+row in `entities` and a page in the home tree (`packages/agent/src/memory/entities.ts`, `notePerson`). (b) "A person
+the owner named" is held by code twice: the name must read as a person's (one to five words of letters, the first and
+last capitalised, no digits, no organisation word such as Corp, Team, Group or Club, no group page of that slug,
+`MEMORY_PERSON_NOT_A_PERSON`), and it must be in the person's own latest typed message, which the chat's code passes
+as `WriteContext.said` (`store.latestTypedText()`, a quoted agent message left out) and the Person checks
+(`MEMORY_PERSON_NOT_NAMED`); a name only a tool result, a page or memory holds is refused, and a job or a colleague's
+turn carries no words. An empty relationship is `MEMORY_PERSON_NO_RELATIONSHIP`. The rejected alternatives: a
+separate `memory_note_person` tool (one more name on every turn's tool list for a write the existing one already
+gates as `mutates`), and trusting the model's own claim that the person named them (message content is data). The
+shape check is a heuristic: a person named in lower case, or with a digit, is refused and said so by code. (c)
+`upsertEntity` now refuses a page write that lost its etag race (`MEMORY_STALE`) instead of reporting it written; the
+relationships loop already drops a refused upsert with its code. (d) Three existing `MEMORY_WORDS` lines were
+sharpened and one added beyond the three items, each for a nice-to-have the acceptance needs at 3/3 and each failing
+on the slot on its reply words (Q18's pattern): the refusal line names the number by what it is and the place kept
+(T-P6-13), the forget line gives the remaining copies in fixed words, the chat and any job or skill (T-P6-12), and a
+recall line asks for a fresh search on every question about a person even when the chat answered it before, the
+later of two disagreeing lines holding (T-P6-09's second recall in c2). No grader changed.
+
 ### Q37 (F41), 2026-10-30: F41's two-way choices, recorded here because the decision log is at its cap
 
 **Blocks nothing; for your read.** (a) T-P14-04's graders were corrected to what the host and the specimen say: a
