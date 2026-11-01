@@ -167,6 +167,25 @@ runbook, so this question can no longer be answered as written; F1's new shape i
 
 ## Open, not blocking
 
+### Q39 (F42), 2026-11-01: on Muse Spark every turn opens with a lead-in bubble, and P9's must-haves fail on it; F42's oracle correction
+
+**Blocks nothing in F42; for your read, and a cross-cutting part if you agree.** On fletch-pv-2, Muse Spark (the
+default since e67f694) wrote a lead-in bubble beside its first step's calls in every T-P9-15 and T-P9-13 trial whose
+thread F42 read, and in T-P9-14's one failing trial ("I'll read that probe with your Example API key.", "I'll get the
+secure form to connect your Example API bearer token."), whatever the instructions said: F42's line asked for no words before the keyed result, naming
+react and tool_search, and the bubble stayed. A grader that reads the chat's first bubble or counts replies takes the
+lead-in for the reply. In run 5 (3ee99e7, Muse) T-P9-13 failed 0/3 on "one reply" and T-P9-14 2/3 on its first reply's
+words; T-P9-13 also fails 0/3 at origin/main a72e7a6 on Muse (a dry run, results outside the repository). F37's 3/3 for
+both ran on 2026-10-30, on GLM; in run 6 (af88176, GLM 5.3 Flash) T-P9-13, T-P9-14 and T-P9-15 each pass 3/3. Every
+cluster's tier-2 tasks that read `replies()[0]` or count replies are exposed the same way on the default model.
+**Recommended answer:** one part, not per-task fixes: either (a) code folds a step's words beside its calls into the
+turn's reply when that step is not the last, so the person sees one reply per ask; or (b) each such grader is
+oracle-corrected to read the turn's bubbles, as F42 did for T-P9-15. (a) fixes what the person sees; (b) only the
+measurement. F42's own choice, for your read: T-P9-15's graders read "the first reply" and "the second turn" as what
+the agent said between Sam's ask and her next, with KICKOFF's three things (the refused turn pinned verbatim as a pass
+and four planted negatives in `test/evals/p9-connectors/bound-host-words.test.ts`, the four failed runs in
+`evidence/results/b3f0abb43bf0….json`); the old second-turn reading had been passing on the first turn's "only you".
+
 ### Q37 (F41), 2026-10-30: F41's two-way choices, recorded here because the decision log is at its cap
 
 **Blocks nothing; for your read.** (a) T-P14-04's graders were corrected to what the host and the specimen say: a
