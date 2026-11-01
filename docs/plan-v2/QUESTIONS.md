@@ -11,9 +11,10 @@ Each question: `### Q<n> (F<n>), <date>: <title>`, then **Blocks:**, **Recommend
 is in: the line, its tier-1 test, T-P9-15 3/3, `ACCEPT F42: PASS`. On fletch-pv-2 Muse Spark (the default since
 e67f694, 2026-10-31) wrote a lead-in bubble beside its first step's calls ("I'll read that probe with your Example API
 key.", "I'll get the secure form to connect your Example API bearer token.") in every T-P9-15 and T-P9-13 trial whose
-thread F42 read and in T-P9-14's one failing trial, whatever the instructions said: runs 2 to 4 tried a clause asking
-for no words before the keyed result, naming react and tool_search, and the bubble stayed (the clause is not in the
-final line; the verifier found it past the scope). A grader that reads the chat's first bubble or counts replies takes
+thread F42 read and in T-P9-14's one failing trial, whatever the instructions said: from run 2 the line asks for no
+words before the keyed result, naming react and tool_search, and the bubble stays. The verifier's first pass found that
+clause past scope line (1), not blocking; cut to the words alone (run 7, ccad997) T-P9-15 fell to 2/3 (a turn that
+said "That host isn't allowed" without the host), so the final line is runs 5 and 6's again, for your ruling. A grader that reads the chat's first bubble or counts replies takes
 the lead-in for the reply: T-P9-13 fails "one reply" 0/3 on Muse at F42's tree and at origin/main a72e7a6 alike (the
 latter a dry run, results outside the repository), and T-P9-14 fails 2/3. F37's 3/3 for both ran on 2026-10-30, on GLM,
 and on GLM 5.3 Flash at F42's tree both pass 3/3. The cause is outside F42's scope (no other instruction line, no grader
