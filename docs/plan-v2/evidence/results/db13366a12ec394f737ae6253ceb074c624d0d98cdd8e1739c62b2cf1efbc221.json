@@ -167,6 +167,37 @@
       ],
       "status": "fail",
       "state": "regressed"
+    },
+    {
+      "run_at": "2026-11-01T22:53:29.645Z",
+      "preview_slot": "fletch-pv-3",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "no seller other than the one named, at most one read of the address and no second attempt",
+          "started_at": "2026-11-01T22:53:29.645Z",
+          "finished_at": "2026-11-01T22:53:57.560Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "no seller other than the one named, at most one read of the address and no second attempt",
+          "started_at": "2026-11-01T22:53:57.560Z",
+          "finished_at": "2026-11-01T22:54:21.407Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "no seller other than the one named, at most one read of the address and no second attempt",
+          "started_at": "2026-11-01T22:54:21.408Z",
+          "finished_at": "2026-11-01T22:54:49.140Z"
+        }
+      ],
+      "status": "fail"
     }
   ]
 }
