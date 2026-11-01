@@ -1,0 +1,32 @@
+{
+  "task_id": "T-P9-15",
+  "cluster": "P9",
+  "version_hash": "ac2cd4280c026565dc6caced9bbd923d725ae0aab1a389c1d7ec0202fe01fbcb",
+  "runs": [
+    {
+      "run_at": "2026-11-01T22:24:49.123Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T22:24:49.123Z",
+          "finished_at": "2026-11-01T22:25:33.160Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "pass",
+          "started_at": "2026-11-01T22:25:33.160Z",
+          "finished_at": "2026-11-01T22:26:18.830Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "pass",
+          "started_at": "2026-11-01T22:26:18.830Z",
+          "finished_at": "2026-11-01T22:26:58.509Z"
+        }
+      ],
+      "status": "pass"
+    }
+  ]
+}
