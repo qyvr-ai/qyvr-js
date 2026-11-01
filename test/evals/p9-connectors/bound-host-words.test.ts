@@ -52,8 +52,7 @@ describe("[F42] a credential refused on a host: the bound-host line", () => {
     expect(LINE).toMatch(/only the person can bind it/);
     expect(LINE).toMatch(/"only you can bind it"/);
     expect(LINE).toMatch(/never call it a list of allowed hosts/);
-    expect(LINE).toMatch(/write no words in any step until the keyed call's result has come back: no text beside react, tool_search or the call itself/);
-    expect(LINE).toMatch(/your first message says in these words/);
+    expect(LINE).toMatch(/nothing was sent: your reply says in these words/);
     for (const ask of ASKS) expect(WORK_WORDS).not.toContain(ask);
     const example = /Example: "([^"]+)"/.exec(LINE)?.[1] ?? "";
     const w = await played(unbound, runs["T-P9-15"]!());

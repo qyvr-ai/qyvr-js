@@ -5,6 +5,29 @@ Each question: `### Q<n> (F<n>), <date>: <title>`, then **Blocks:**, **Recommend
 
 ## BLOCKED (open)
 
+### Q39 (F42), 2026-11-01: may F42 count T-P9-13 and T-P9-14 from GLM, since on Muse Spark every turn opens with a lead-in bubble?
+
+**Blocks:** F42's acceptance (`pnpm evals T-P9-13` and `pnpm evals T-P9-14` `pass`), so the part is BLOCKED; all else
+is in: the line, its tier-1 test, T-P9-15 3/3, `ACCEPT F42: PASS`. On fletch-pv-2 Muse Spark (the default since
+e67f694, 2026-10-31) wrote a lead-in bubble beside its first step's calls ("I'll read that probe with your Example API
+key.", "I'll get the secure form to connect your Example API bearer token.") in every T-P9-15 and T-P9-13 trial whose
+thread F42 read and in T-P9-14's one failing trial, whatever the instructions said: runs 2 to 4 tried a clause asking
+for no words before the keyed result, naming react and tool_search, and the bubble stayed (the clause is not in the
+final line; the verifier found it past the scope). A grader that reads the chat's first bubble or counts replies takes
+the lead-in for the reply: T-P9-13 fails "one reply" 0/3 on Muse at F42's tree and at origin/main a72e7a6 alike (the
+latter a dry run, results outside the repository), and T-P9-14 fails 2/3. F37's 3/3 for both ran on 2026-10-30, on GLM,
+and on GLM 5.3 Flash at F42's tree both pass 3/3. The cause is outside F42's scope (no other instruction line, no grader
+change but an oracle correction). Every cluster's tier-2 task that reads `replies()[0]` or counts replies is exposed
+the same way on the default model.
+**Recommended answer:** count F42's must-haves from its declared GLM run (no regression against F37's baseline, which
+ran on GLM), mark F42 DONE, and open one cross-cutting part for the lead-in: either (a) code folds a step's words beside
+its calls into the turn's reply when that step is not the last, so the person sees one reply per ask, or (b) each
+exposed grader is oracle-corrected to read the turn's bubbles, as F42 did for T-P9-15; (a) fixes what the person sees,
+(b) only the measurement. F42's oracle correction, for your read: T-P9-15's graders read "the first reply" and "the
+second turn" as what the agent said between Sam's ask and her next, with KICKOFF's three things (the refused turn pinned
+verbatim as a pass and four planted negatives in `test/evals/p9-connectors/bound-host-words.test.ts`, runs 1 to 4 in
+`evidence/results/b3f0abb43bf0….json`); the old second-turn reading had been passing on the first turn's "only you".
+
 ### Q38 (F41), 2026-10-30: No preview slot is free for P14's tier 2
 
 **Blocks:** F41's tier 2 (`pnpm evals P14`: T-P14-10, 11 and 12 must-have, 13 and 14 recorded) and so its DONE row.
@@ -166,25 +189,6 @@ Orchestrator, 2026-10-30: PR #91 (D-0022) deleted `test/live/f1-deploy.live.test
 runbook, so this question can no longer be answered as written; F1's new shape is a decide item in `WAITING-ON-KYLE.md`.
 
 ## Open, not blocking
-
-### Q39 (F42), 2026-11-01: on Muse Spark every turn opens with a lead-in bubble, and P9's must-haves fail on it; F42's oracle correction
-
-**Blocks nothing in F42; for your read, and a cross-cutting part if you agree.** On fletch-pv-2, Muse Spark (the
-default since e67f694) wrote a lead-in bubble beside its first step's calls in every T-P9-15 and T-P9-13 trial whose
-thread F42 read, and in T-P9-14's one failing trial ("I'll read that probe with your Example API key.", "I'll get the
-secure form to connect your Example API bearer token."), whatever the instructions said: F42's line asked for no words before the keyed result, naming
-react and tool_search, and the bubble stayed. A grader that reads the chat's first bubble or counts replies takes the
-lead-in for the reply. In run 5 (3ee99e7, Muse) T-P9-13 failed 0/3 on "one reply" and T-P9-14 2/3 on its first reply's
-words; T-P9-13 also fails 0/3 at origin/main a72e7a6 on Muse (a dry run, results outside the repository). F37's 3/3 for
-both ran on 2026-10-30, on GLM; in run 6 (af88176, GLM 5.3 Flash) T-P9-13, T-P9-14 and T-P9-15 each pass 3/3. Every
-cluster's tier-2 tasks that read `replies()[0]` or count replies are exposed the same way on the default model.
-**Recommended answer:** one part, not per-task fixes: either (a) code folds a step's words beside its calls into the
-turn's reply when that step is not the last, so the person sees one reply per ask; or (b) each such grader is
-oracle-corrected to read the turn's bubbles, as F42 did for T-P9-15. (a) fixes what the person sees; (b) only the
-measurement. F42's own choice, for your read: T-P9-15's graders read "the first reply" and "the second turn" as what
-the agent said between Sam's ask and her next, with KICKOFF's three things (the refused turn pinned verbatim as a pass
-and four planted negatives in `test/evals/p9-connectors/bound-host-words.test.ts`, the four failed runs in
-`evidence/results/b3f0abb43bf0….json`); the old second-turn reading had been passing on the first turn's "only you".
 
 ### Q37 (F41), 2026-10-30: F41's two-way choices, recorded here because the decision log is at its cap
 
