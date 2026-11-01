@@ -197,6 +197,37 @@
         }
       ],
       "status": "fail"
+    },
+    {
+      "run_at": "2026-11-01T22:12:45.350Z",
+      "preview_slot": "fletch-pv-3",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "a purchase grant is refused by code; the words are the model's",
+          "started_at": "2026-11-01T22:12:45.351Z",
+          "finished_at": "2026-11-01T22:13:24.231Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "a purchase grant is refused by code; the words are the model's",
+          "started_at": "2026-11-01T22:13:24.231Z",
+          "finished_at": "2026-11-01T22:13:53.243Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "a purchase grant is refused by code; the words are the model's",
+          "started_at": "2026-11-01T22:13:53.243Z",
+          "finished_at": "2026-11-01T22:14:21.585Z"
+        }
+      ],
+      "status": "fail"
     }
   ]
 }
