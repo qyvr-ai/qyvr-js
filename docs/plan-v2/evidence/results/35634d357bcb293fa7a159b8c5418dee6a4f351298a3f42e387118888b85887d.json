@@ -143,6 +143,60 @@
         }
       ],
       "status": "fail"
+    },
+    {
+      "run_at": "2026-11-01T22:02:06.211Z",
+      "preview_slot": "fletch-pv-3",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T22:02:06.211Z",
+          "finished_at": "2026-11-01T22:02:41.920Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "pass",
+          "started_at": "2026-11-01T22:02:41.920Z",
+          "finished_at": "2026-11-01T22:03:01.056Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "a purchase grant is refused by code; the words are the model's",
+          "started_at": "2026-11-01T22:03:01.056Z",
+          "finished_at": "2026-11-01T22:03:28.744Z"
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "run_at": "2026-11-01T22:08:43.987Z",
+      "preview_slot": "fletch-pv-3",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T22:08:43.987Z",
+          "finished_at": "2026-11-01T22:09:10.205Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "a purchase grant is refused by code; the words are the model's",
+          "started_at": "2026-11-01T22:09:10.206Z",
+          "finished_at": "2026-11-01T22:09:39.867Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "pass",
+          "started_at": "2026-11-01T22:09:39.867Z",
+          "finished_at": "2026-11-01T22:10:01.751Z"
+        }
+      ],
+      "status": "fail"
     }
   ]
 }
