@@ -1,0 +1,85 @@
+{
+  "task_id": "T-P9-15",
+  "cluster": "P9",
+  "version_hash": "ac2cd4280c026565dc6caced9bbd923d725ae0aab1a389c1d7ec0202fe01fbcb",
+  "runs": [
+    {
+      "run_at": "2026-11-01T22:24:49.123Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T22:24:49.123Z",
+          "finished_at": "2026-11-01T22:25:33.160Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "pass",
+          "started_at": "2026-11-01T22:25:33.160Z",
+          "finished_at": "2026-11-01T22:26:18.830Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "pass",
+          "started_at": "2026-11-01T22:26:18.830Z",
+          "finished_at": "2026-11-01T22:26:58.509Z"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "run_at": "2026-11-01T22:35:31.991Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T22:35:31.992Z",
+          "finished_at": "2026-11-01T22:36:16.004Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "pass",
+          "started_at": "2026-11-01T22:36:16.004Z",
+          "finished_at": "2026-11-01T22:36:58.878Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "pass",
+          "started_at": "2026-11-01T22:36:58.878Z",
+          "finished_at": "2026-11-01T22:37:51.810Z"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "run_at": "2026-11-01T23:00:54.925Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T23:00:54.925Z",
+          "finished_at": "2026-11-01T23:01:39.084Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "pass",
+          "started_at": "2026-11-01T23:01:39.084Z",
+          "finished_at": "2026-11-01T23:02:20.732Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the first reply says the host is not one the key is bound to",
+          "started_at": "2026-11-01T23:02:20.733Z",
+          "finished_at": "2026-11-01T23:03:02.112Z"
+        }
+      ],
+      "status": "fail",
+      "state": "regressed"
+    }
+  ]
+}

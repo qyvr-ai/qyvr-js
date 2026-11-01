@@ -5,6 +5,30 @@ Each question: `### Q<n> (F<n>), <date>: <title>`, then **Blocks:**, **Recommend
 
 ## BLOCKED (open)
 
+### Q39 (F42), 2026-11-01: may F42 count T-P9-13 and T-P9-14 from GLM, since on Muse Spark every turn opens with a lead-in bubble?
+
+**Blocks:** F42's acceptance (`pnpm evals T-P9-13` and `pnpm evals T-P9-14` `pass`), so the part is BLOCKED; all else
+is in: the line, its tier-1 test, T-P9-15 3/3, `ACCEPT F42: PASS`. On fletch-pv-2 Muse Spark (the default since
+e67f694, 2026-10-31) wrote a lead-in bubble beside its first step's calls ("I'll read that probe with your Example API
+key.", "I'll get the secure form to connect your Example API bearer token.") in every T-P9-15 and T-P9-13 trial whose
+thread F42 read and in T-P9-14's one failing trial, whatever the instructions said: from run 2 the line asks for no
+words before the keyed result, naming react and tool_search, and the bubble stays. The verifier's first pass found that
+clause past scope line (1), not blocking; cut to the words alone (run 7, ccad997) T-P9-15 fell to 2/3 (a turn that
+said "That host isn't allowed" without the host), so the final line is runs 5 and 6's again, for your ruling. A grader that reads the chat's first bubble or counts replies takes
+the lead-in for the reply: T-P9-13 fails "one reply" 0/3 on Muse at F42's tree and at origin/main a72e7a6 alike (the
+latter a dry run, results outside the repository), and T-P9-14 fails 2/3. F37's 3/3 for both ran on 2026-10-30, on GLM,
+and on GLM 5.3 Flash at F42's tree both pass 3/3. The cause is outside F42's scope (no other instruction line, no grader
+change but an oracle correction). Every cluster's tier-2 task that reads `replies()[0]` or counts replies is exposed
+the same way on the default model.
+**Recommended answer:** count F42's must-haves from its declared GLM run (no regression against F37's baseline, which
+ran on GLM), mark F42 DONE, and open one cross-cutting part for the lead-in: either (a) code folds a step's words beside
+its calls into the turn's reply when that step is not the last, so the person sees one reply per ask, or (b) each
+exposed grader is oracle-corrected to read the turn's bubbles, as F42 did for T-P9-15; (a) fixes what the person sees,
+(b) only the measurement. F42's oracle correction, for your read: T-P9-15's graders read "the first reply" and "the
+second turn" as what the agent said between Sam's ask and her next, with KICKOFF's three things (the refused turn pinned
+verbatim as a pass and four planted negatives in `test/evals/p9-connectors/bound-host-words.test.ts`, runs 1 to 4 in
+`evidence/results/b3f0abb43bf0….json`); the old second-turn reading had been passing on the first turn's "only you".
+
 ### Q38 (F41), 2026-10-30: No preview slot is free for P14's tier 2
 
 **Blocks:** F41's tier 2 (`pnpm evals P14`: T-P14-10, 11 and 12 must-have, 13 and 14 recorded) and so its DONE row.

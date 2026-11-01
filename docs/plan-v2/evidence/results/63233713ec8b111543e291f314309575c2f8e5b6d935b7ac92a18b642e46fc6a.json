@@ -52,6 +52,96 @@
         }
       ],
       "status": "pass"
+    },
+    {
+      "run_at": "2026-11-01T22:27:12.504Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the turn ends with the reply: one reply, no secrets row, no card, no grant, no audit row",
+          "started_at": "2026-11-01T22:27:12.505Z",
+          "finished_at": "2026-11-01T22:27:34.882Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the turn ends with the reply: one reply, no secrets row, no card, no grant, no audit row",
+          "started_at": "2026-11-01T22:27:34.883Z",
+          "finished_at": "2026-11-01T22:27:53.307Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the turn ends with the reply: one reply, no secrets row, no card, no grant, no audit row",
+          "started_at": "2026-11-01T22:27:53.308Z",
+          "finished_at": "2026-11-01T22:28:14.536Z"
+        }
+      ],
+      "status": "fail",
+      "state": "regressed"
+    },
+    {
+      "run_at": "2026-11-01T22:38:06.181Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "pass",
+          "started_at": "2026-11-01T22:38:06.181Z",
+          "finished_at": "2026-11-01T22:38:43.490Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "pass",
+          "started_at": "2026-11-01T22:38:43.490Z",
+          "finished_at": "2026-11-01T22:39:14.150Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "pass",
+          "started_at": "2026-11-01T22:39:14.150Z",
+          "finished_at": "2026-11-01T22:39:28.959Z"
+        }
+      ],
+      "status": "pass",
+      "state": "improved"
+    },
+    {
+      "run_at": "2026-11-01T23:03:16.562Z",
+      "preview_slot": "fletch-pv-2",
+      "trials": [
+        {
+          "trial_id": 1,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the turn ends with the reply: one reply, no secrets row, no card, no grant, no audit row",
+          "started_at": "2026-11-01T23:03:16.562Z",
+          "finished_at": "2026-11-01T23:03:36.606Z"
+        },
+        {
+          "trial_id": 2,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the turn ends with the reply: one reply, no secrets row, no card, no grant, no audit row",
+          "started_at": "2026-11-01T23:03:36.606Z",
+          "finished_at": "2026-11-01T23:03:53.965Z"
+        },
+        {
+          "trial_id": 3,
+          "status": "fail",
+          "code": "GRADER_FAILED",
+          "rule": "the turn ends with the reply: one reply, no secrets row, no card, no grant, no audit row",
+          "started_at": "2026-11-01T23:03:53.965Z",
+          "finished_at": "2026-11-01T23:04:09.176Z"
+        }
+      ],
+      "status": "fail",
+      "state": "regressed"
     }
   ]
 }
