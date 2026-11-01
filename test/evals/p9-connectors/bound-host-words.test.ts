@@ -2,10 +2,10 @@
 // the reply says the key is not bound to that host, naming it, and that only the person can bind it. Code has already
 // refused the call and written its audit row; the line only words the reply. On fletch-pv-1 (F37) the model said the
 // host "isn't on your list of allowed hosts", which T-P9-15's grader does not hear, and on fletch-pv-2 (F42's first
-// run) it wrote "I'll read that probe address..." beside the call, which became the turn's first message; the line asks
-// for the words the grader hears, in the first message, the call made with none beside it. Here the line reaches every
-// chat request of T-P9-15's scripted run, whose first reply follows it and holds every grader, and the old reply and
-// the words beside the call, each planted, still fail the grader unchanged.
+// and second runs) it wrote "I'll read that probe address..." beside its first tool call, which became the turn's first
+// message; the line asks for the words the grader hears, in the first message, with no words before the keyed result.
+// Here the line reaches every chat request of T-P9-15's scripted run, whose first reply follows it and holds every
+// grader, and the old reply and the words beside the first call, each planted, still fail the grader unchanged.
 import { describe, expect, it } from "vitest";
 import { CHAT_TASK, WORK_WORDS } from "../../../packages/agent/src/chat/instructions.ts";
 import { played } from "./harness.ts";
@@ -19,7 +19,7 @@ const lines = WORK_WORDS.split("\n").filter((l) => l.includes('"is not bound to"
 const LINE = lines[0] ?? "";
 /** The reply Q31 records from the slot, in place of the scripted first reply. */
 const OLD = `I couldn't read that: ${OTHER_HOST} isn't on your list of allowed hosts for this key, so nothing was sent.`;
-/** The words the model wrote beside the call on fletch-pv-2. */
+/** The words the model wrote beside its first tool call (tool_search) on fletch-pv-2. */
 const BESIDE = "I'll read that probe address with your Example API key.";
 
 const verdicts = async (w: P9World) => Object.fromEntries(await Promise.all(unbound.graders.map(async (g) => [g.name, g.kind === "minefield" ? !(await g.check(w)) : await g.check(w)])));
@@ -37,7 +37,7 @@ describe("[F42] a credential refused on a host: the bound-host line", () => {
     expect(LINE).toMatch(/only the person can bind it/);
     expect(LINE).toMatch(/"only you can bind it"/);
     expect(LINE).toMatch(/never call it a list of allowed hosts/);
-    expect(LINE).toMatch(/goes out with no words beside it/);
+    expect(LINE).toMatch(/write no words until the keyed call's result has come back: none beside tool_search and none beside the call/);
     expect(LINE).toMatch(/your first message says in these words/);
     for (const ask of ASKS) expect(WORK_WORDS).not.toContain(ask);
     const example = /Example: "([^"]+)"/.exec(LINE)?.[1] ?? "";
@@ -59,7 +59,7 @@ describe("[F42] a credential refused on a host: the bound-host line", () => {
     const old = await played(unbound, { ...o, script: o.script.map((s, i) => (i === 2 ? { text: OLD } : s)) });
     expect(old.replies("c1")[0]).toBe(OLD);
     expect((await verdicts(old))[FIRST]).toBe(false);
-    const beside = await played(unbound, { ...o, script: o.script.map((s, i) => (i === 1 && "toolCall" in s ? { ...s, text: BESIDE } : s)) });
+    const beside = await played(unbound, { ...o, script: o.script.map((s, i) => (i === 0 && "toolCall" in s ? { ...s, text: BESIDE } : s)) });
     expect(beside.replies("c1").slice(0, 2)).toEqual([BESIDE, BOUND_REPLY]);
     expect((await verdicts(beside))[FIRST]).toBe(false);
     expect(carried(w.prompts().map((p) => p.replace(LINE, "")))).toBe(false);
