@@ -2,9 +2,13 @@
 // wallet or payment-method question this deploy's "no wallet", "no payment method" and the live page (T-P12-13); the
 // daily-cap line gives the cap as the agent's own model spend (T-P12-12). Each line reaches every chat model request,
 // each task's graders pass on a scripted reply in the line's sentence, and the replies Q35 reports from the slot are
-// planted negatives that still fail. No grader changed: the task files, and so their hashes, are F38's.
+// planted negatives that still fail. Neither task's grader changed; T-P12-10's oracle correction (one turn, not one
+// bubble) is pinned in `tier2-fake.test.ts`, and every P12 hash, its new one among them, is checked here.
+import { readFileSync } from "node:fs";
 import { beforeAll, describe, expect, it } from "vitest";
 import { WORK_WORDS } from "../../../packages/agent/src/chat/instructions.ts";
+import { staleHashes } from "../../support/task-hashes.ts";
+import { repoRoot } from "../../support/temp-repo.ts";
 import type { Turn } from "../../support/task.ts";
 import allowance, { CAP } from "./allowance-refused-real-model.task.ts";
 import card from "./card-typed-real-model.task.ts";
@@ -77,6 +81,13 @@ describe("[F43] P12 words: no wallet, no payment method, and the daily cap as mo
   let capWorld: P12Tier1World;
   beforeAll(async () => {
     capWorld = await played(allowance, runs["T-P12-12"]!());
+  });
+
+  it("every P12 version_hash in the contract, tier 2 among them, is its task file's hash; a stale one is named", () => {
+    const contract = readFileSync(`${repoRoot}/docs/plan-v2/contracts/P12-wallet.md`, "utf8");
+    expect(staleHashes(contract)).toEqual([]);
+    const t10 = /T-P12-10 [\s\S]*?version_hash: (\S+)/.exec(contract)?.[1] as string;
+    expect(staleHashes(contract.replace(`version_hash: ${t10}`, "version_hash: db13366a12ec"))).toEqual([`T-P12-10 db13366a12ec ${t10}`]);
   });
 
   it("each line gives its sentence in these words, Q35's recommended answer", () => {
